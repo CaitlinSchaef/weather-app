@@ -12,30 +12,25 @@ http://api.openweathermap.org/geo/1.0/zip?zip={zip code},{country code}&appid={d
 http://api.openweathermap.org/geo/1.0/zip?zip=40508,US&appid=d5dec2820ad3221e7cd366cb8af99291
 */
 
+// leave this import line at the top
 import axios from 'axios';
 
-
-// this function is async and it is correctly grabbing the zip code
-    async function grabZipCode () {
+// this function is async and it is correctly grabbing the weather
+    async function grabWeather (zipCode, countryCode = 'US') {
         try {
             const weather = await 
-            axios.get('http://api.openweathermap.org/geo/1.0/zip?zip=40508,US&appid=d5dec2820ad3221e7cd366cb8af99291')
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&appid=d5dec2820ad3221e7cd366cb8af99291`)
             console.log(weather)
         } catch (error) {
         } 
     }
-    grabZipCode()
-
-// grab lat and lon (and name?) from this function (which is working!) and then run that into the open weather thing through string interpolation?
-    
-
+    let loc = navigator.geolocation.getCurrentPosition()
+    console.log(loc)
+    grabWeather(40508)
 
 
 
-    // function uploadWeather () {
-    //     const weather = grabWeather()
-    //     console.log('QUOTE: ', quotes)
-    //    }
-       
-       
-    //   updloadWeather()
+// function to call info from weather API
+
+// function to insert info into the html divs - can this be combined with above?
+

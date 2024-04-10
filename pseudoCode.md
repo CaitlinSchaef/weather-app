@@ -1,6 +1,42 @@
+this is the weather API ids:
+  "coord": {
+    "lon": 10.99,
+    "lat": 44.34
+  },
+  "weather": [
+    {
+      "id": 501,
+      "main": "Rain",
+      "description": "moderate rain",
+      "icon": "10d"
+    }
+  ],
+
+
+
+
+
+fun idea:
+Can I make my error message come as a pop up? If I want to do that, this is the css for making a box appear in the viewport?
+.element {
+  position: fixed;
+  inset: 0px;
+  width: 12rem;
+  height: 5rem;
+  max-width: 100vw;
+  max-height: 100dvh;
+  margin: auto;
+}
+
+https://www.joshwcomeau.com/css/center-a-div/
+
+
+
+
+
 For designing the page:
 I think I need one container that has two inside of it
-
+Work from here first 
 <div id="appMainContainer" class="container"> <!--overarching container-->
     <div id="row1" class="row"> <!--top row-->
         <div class="col"> <!--column in top row-->
