@@ -13,6 +13,12 @@ this is the weather API ids:
   ],
 
 
+  javascript pseudocode:
+  set variables
+  run a code that inputs the zipcode into the weather api on the click event of the get weather button
+    then it will input the information it gets from the api into the div boxes
+
+
 
 
 

@@ -27,7 +27,7 @@
         <label for="zipCodeInput" class="form-label"></label> <!--maybe take this away?-->
       </div>
       <div id="r2c2" class="col-6 text-center">
-      <button>Get Weather</button>
+      <button id="getWeatherButton">Get Weather</button>
       </div>
   </div> <!--going to set the main body now-->
   <div id="mainBodyRow" class="row bg-success h-fill px-5"> <!--start with one row (which is really our last main row 3)-->
@@ -37,7 +37,7 @@
                   <div class="card text-center border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
                       <div class="card-header border border-dark">City</div>
                       <div class="card-body border border-dark">
-                      <p id="city" class="card-text">Lexington</p>
+                      <p id="cityBox" class="card-text"></p>
                       </div>
                   </div>
               </div>
@@ -48,11 +48,11 @@
                       <div class="card-header border border-dark">Temperature</div>
                       <div class="card-block">
                           <div class="d-flex">
-                              <div class="col-4 border border-dark"> Kelvin
+                              <div class="col-4 border border-dark" id="kelvinBox"> 
                               </div>
-                              <div class="col-4 border border-dark"> Fahrenheit
+                              <div class="col-4 border border-dark" id="fahrenheitBox"> 
                               </div>
-                              <div class="col-4 border border-dark"> Celsius
+                              <div class="col-4 border border-dark" id="celsiusBox"> 
                               </div>
                             </div>
                       </div>
@@ -64,7 +64,7 @@
                   <div class="card text-center border border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
                       <div class="card-header border border-dark">Condition</div>
                       <div class="card-body border border-dark">
-                      <p class="card-text">Light Rain</p>
+                      <p class="card-text" id="conditionBox"></p>
                       </div>
                   </div>
               </div>
@@ -74,7 +74,7 @@
                   <div class="card text-center border border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
                       <div class="card-header border border-dark">Other Info</div>
                       <div class="card-body border border-dark">
-                      <p class="card-text">Image</p>
+                      <p class="card-text" id="imageBox">Image</p>
                       </div>
                   </div>
               </div>

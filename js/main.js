@@ -15,22 +15,54 @@ http://api.openweathermap.org/geo/1.0/zip?zip=40508,US&appid=d5dec2820ad3221e7cd
 // leave this import line at the top
 import axios from 'axios';
 
-// this function is async and it is correctly grabbing the weather
+// set constants
+const zipCodeInput = document.getElementById('zipCodeInput')
+const getWeatherButton = document.getElementById('getWeatherButton')
+const cityBox = document.getElementById('cityBox')
+const kelvinBox = document.getElementById('kelvinBox')
+const fahrenheitBox = document.getElementById('fahrenheitBox')
+const celsiusBox = document.getElementById('celsiusBox')
+const conditionBox = document.getElementById('conditionBox')
+const imageBox = document.getElementById('imageBox')
+
+// this function is async and it is correctly grabbing the weather -a getter
     async function grabWeather (zipCode, countryCode = 'US') {
         try {
             const weather = await 
             axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&appid=d5dec2820ad3221e7cd366cb8af99291`)
-            console.log(weather)
+            console.log(weather.data.name)
+            return weather
         } catch (error) {
         } 
     }
-    let loc = navigator.geolocation.getCurrentPosition()
-    console.log(loc)
-    grabWeather(40508)
+    // let loc = navigator.geolocation.getCurrentPosition()
+    // console.log(loc)
+
+    // grabWeather(40508)
+
+// // function to call info from weather API -a getter
+// function callWeather () {
+    
+// }
+
+// function to insert info into the html divs  -setter
+
+async function fillPage(zipCode){
+    const weatherInfo = await grabWeather(zipCode)
+        console.log(weatherInfo)
+        cityBox.textContent = weatherInfo.data.name
+        kelvinBox.textContent = weatherInfo.data.main.temp
+        fahrenheitBox.textContent = ''
+        celsiusBox.textContent = ''
+        conditionBox.textContent = weatherInfo.data.weather[0].description
+        imageBox.createElement = ''
+
+}
 
 
+// get weather button function
 
-// function to call info from weather API
+getWeatherButton.addEventListener('click', (()=>fillPage(zipCodeInput.value)))
 
-// function to insert info into the html divs - can this be combined with above?
+// main page function
 
