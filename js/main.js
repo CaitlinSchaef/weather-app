@@ -51,9 +51,9 @@ async function fillPage(zipCode){
     const weatherInfo = await grabWeather(zipCode)
         console.log(weatherInfo)
         cityBox.textContent = weatherInfo.data.name
-        kelvinBox.textContent = weatherInfo.data.main.temp
-        fahrenheitBox.textContent = ''
-        celsiusBox.textContent = ''
+        kelvinBox.textContent = Math.floor(weatherInfo.data.main.temp)
+        fahrenheitBox.textContent = Math.floor(((weatherInfo.data.main.temp)-273.15) * 1.8 + 32)
+        celsiusBox.textContent = Math.floor(weatherInfo.data.main.temp-273.15)
         conditionBox.textContent = weatherInfo.data.weather[0].description
         imageBox.createElement = ''
 
