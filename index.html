@@ -15,29 +15,29 @@
 
 
  
-<div id="appMainContainer" class="container justify-content-center"> <!--overarching container-->
+<div id="appMainContainer" class="container-fluid bg-danger vh-100 justify-content-center"> <!--overarching container-->
   <div id="row1" class="row"> <!--top row-->
       <div class="col-12 mb-3 justify-content-center"> <!--column in top row-->
-     <div class="header"><h1>Weather App</h1></div>
+     <div class="header text-center"><h1>Weather App</h1></div>
       </div>
   </div> <!--end top row-->
-  <div id="row2" class="row d-flex justify-content-center"> <!--row 2 for buttons-->
-      <div id="r2c1" class="col-6 mb-5"> 
-        <input type="number" class="form" id="zipCodeInput" aria-describedby="Enter Zip Code">
-        <label for="zipCodeInput" class="form-label">Enter Zipcode Here</label> <!-- maybe take this away?-->
+  <div id="row2" class="row align-items-center mb-5 py-1 justify-content-center"> <!--row 2 for buttons-->
+      <div id="r2c1" class="col-6 text-center"> 
+        <input type="number" id="zipCodeInput" placeholder="ZipCode" aria-describedby="Enter Zip Code">
+        <label for="zipCodeInput" class="form-label"></label> <!--maybe take this away?-->
       </div>
-      <div id="r2c2" class="col-6">
-      <button>Get Weather Button</button>
+      <div id="r2c2" class="col-6 text-center">
+      <button>Get Weather</button>
       </div>
   </div> <!--going to set the main body now-->
-  <div id="mainBodyRow" class="row"> <!--start with one row (which is really our last main row 3)-->
-      <div id="mainBodyCol" class="col"> <!--nestle a column inside of that row to put all others inside-->
+  <div id="mainBodyRow" class="row bg-success h-fill px-5"> <!--start with one row (which is really our last main row 3)-->
+      <div id="mainBodyCol" class="col-12"> <!--nestle a column inside of that row to put all others inside-->
           <div id="cityRow" class="row">
               <div class="col">
                   <div class="card text-center border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
-                      <div class="card-header border-success">City</div>
-                      <div class="card-body">
-                      <p class="card-text">Lexington</p>
+                      <div class="card-header border border-dark">City</div>
+                      <div class="card-body border border-dark">
+                      <p id="city" class="card-text">Lexington</p>
                       </div>
                   </div>
               </div>
@@ -45,25 +45,25 @@
           <div id="tempRow" class="row">
               <div class="col">
                 <div class="card text-center border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
-                      <div class="card-header border-success">Temperature</div>
+                      <div class="card-header border border-dark">Temperature</div>
                       <div class="card-block">
-                          <div class="row">
-                              <div class="col-4"> Kelvin
+                          <div class="d-flex">
+                              <div class="col-4 border border-dark"> Kelvin
                               </div>
-                              <div class="col-4"> Fahrenheit
+                              <div class="col-4 border border-dark"> Fahrenheit
                               </div>
-                              <div class="col-4"> Celsius
+                              <div class="col-4 border border-dark"> Celsius
                               </div>
-                          </div>
+                            </div>
                       </div>
                   </div>
               </div>
           </div>
           <div id="conditionRow" class="row">
               <div class="col">
-                  <div class="card text-center border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
-                      <div class="card-header border-success">Condition</div>
-                      <div class="card-body">
+                  <div class="card text-center border border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
+                      <div class="card-header border border-dark">Condition</div>
+                      <div class="card-body border border-dark">
                       <p class="card-text">Light Rain</p>
                       </div>
                   </div>
@@ -71,9 +71,9 @@
           </div>
           <div id="otherInfoRow" class="row">
               <div class="col">
-                  <div class="card text-center border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
-                      <div class="card-header border-success">Other Info</div>
-                      <div class="card-body">
+                  <div class="card text-center border border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
+                      <div class="card-header border border-dark">Other Info</div>
+                      <div class="card-body border border-dark">
                       <p class="card-text">Image</p>
                       </div>
                   </div>
