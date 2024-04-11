@@ -60,6 +60,7 @@ async function fillPage(zipCode){
         celsiusBox.textContent = Math.floor(weatherInfo.data.main.temp-273.15) + '°C'
         conditionBox.textContent = weatherInfo.data.weather[0].description + '!'
         imageBox.src = `https://openweathermap.org/img/wn/${weatherInfo.data.weather[0].icon}@2x.png`
+        changeColor(weatherInfo.data.weather[0].id)
     }
 }
 
@@ -70,6 +71,31 @@ getWeatherButton.addEventListener('click', (()=>fillPage(zipCodeInput.value)))
 // getWeatherButton.className.setAttribute('disabled')
 // zipCodeInput.addEventListener("change",(getWeatherButton.classList.add(`${zipCodeInput.value.length !== 5 && 'disabled'}`)))
 
+function changeColor(color) {
+        // thunderstorms
+   if (color >= 200 && color <= 250) {
+       document.body.style.backgroundColor = "#444b59"
+       // cloudy
+    } else if (color >= 801 && color <= 850) {
+        document.body.style.backgroundColor = "#b4b3b9"
+        // drizzle
+     } else if (color >= 300 && color <= 350) {
+        document.body.style.backgroundColor = "#afc3cc"
+        // rain
+     } else if (color >= 500 && color <= 550) {
+        document.body.style.backgroundColor = "#98abc6"
+        // snow
+     } else if (color >= 600 && color <= 650) {
+        document.body.style.backgroundColor = "#fffafa"
+      // atmosphere and haze
+    } else if (color >= 600 && color <= 650) {
+       document.body.style.backgroundColor = "#cad7d9"
+        // CLEAR DAY
+    } else if (color == 800) {
+            document.body.style.backgroundColor = "#c3eefa"
+        }
+        console.log(color)
+    }
 
 
 function errorMessage(zipCode) {
@@ -84,11 +110,9 @@ function errorMessage(zipCode) {
 // if you wanted to do changing background weather 
 // if starts with 2 background grey, etc for changing weather 
 
-/*
-Swal.fire({
-  icon: "error",
-  title: "Oops...",
-  text: "Something went wrong!",
-  footer: '<a href="#">Why do I have this issue?</a>'
-});
-*/
+// function changeBackground(imageBox) {
+//     value of icon from imageBox
+// weatherInfo.data.weather[0].id
+// 7 colors
+
+// }
