@@ -48,7 +48,10 @@ const imageBox = document.getElementById('imageBox')
 // function to insert info into the html divs  -setter
 
 async function fillPage(zipCode){
-    errorMessage()
+    if (errorMessage(zipCode)) {
+        console.log("error")
+    } else {
+
     const weatherInfo = await grabWeather(zipCode)
         console.log(weatherInfo)
         cityBox.textContent = weatherInfo.data.name
@@ -57,18 +60,25 @@ async function fillPage(zipCode){
         celsiusBox.textContent = Math.floor(weatherInfo.data.main.temp-273.15) + '°C'
         conditionBox.textContent = weatherInfo.data.weather[0].description + '!'
         imageBox.src = `https://openweathermap.org/img/wn/${weatherInfo.data.weather[0].icon}@2x.png`
+    }
 }
 
 
 // get weather button function
 
 getWeatherButton.addEventListener('click', (()=>fillPage(zipCodeInput.value)))
+// getWeatherButton.className.setAttribute('disabled')
+// zipCodeInput.addEventListener("change",(getWeatherButton.classList.add(`${zipCodeInput.value.length !== 5 && 'disabled'}`)))
 
-// zipcode error message function
 
-function errorMessage() {
-    if zipCode length > 5 wrong then do this
-    window.alert("Not a zip code!")
+
+function errorMessage(zipCode) {
+    console.log(zipCode)
+    console.log(typeof(zipCode))
+    if (zipCode.length > 5 || zipCode.length < 5) {
+        window.alert("Not a zip code!")
+        return true
+    }
 }
 
 // if starts with 2 background grey, etc for changing weather 
