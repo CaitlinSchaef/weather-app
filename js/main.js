@@ -76,10 +76,19 @@ function errorMessage(zipCode) {
     console.log(zipCode)
     console.log(typeof(zipCode))
     if (zipCode.length > 5 || zipCode.length < 5) {
-        window.alert("Not a zip code!")
+        window.alert('Not a valid zip code!')
         return true
     }
 }
 
+// if you wanted to do changing background weather 
 // if starts with 2 background grey, etc for changing weather 
 
+/*
+Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: "Something went wrong!",
+  footer: '<a href="#">Why do I have this issue?</a>'
+});
+*/
