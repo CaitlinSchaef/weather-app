@@ -1,5 +1,5 @@
 /* 
-open weather API key: d5dec2820ad3221e7cd366cb8af99291
+
 weather stuff:
 The actual weather API:
 https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={d5dec2820ad3221e7cd366cb8af99291}
