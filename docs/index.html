@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <link rel="icon" type="image/x-icon" href="/weather-app/assets/favicon-B3s2VIb2.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- project styles -->
+    <script type="module" crossorigin src="/weather-app/assets/index-DGarOKu4.js"></script>
+    <link rel="stylesheet" crossorigin href="/weather-app/assets/index-Bsga6uc8.css">
+  </head>
+  <body>
+
+
+
+ 
+<div id="appMainContainer" class="container-fluid vh-100 justify-content-center"> <!--overarching container-->
+  <div id="row1" class="row"> <!--top row-->
+      <div class="col-12 mb-3 justify-content-center"> <!--column in top row-->
+     <div class="header text-center"><h1>Weather App</h1></div>
+      </div>
+  </div> <!--end top row-->
+  <div id="row2" class="row align-items-center mb-5 py-1 justify-content-center"> <!--row 2 for buttons-->
+      <div id="r2c1" class="col-6 text-center"> 
+        <input type="number" id="zipCodeInput" placeholder="ZipCode" aria-describedby="Enter Zip Code">
+        <label for="zipCodeInput" class="form-label"></label> <!--maybe take this away?-->
+      </div>
+      <div id="r2c2" class="col-6 text-center">
+      <button id="getWeatherButton">Get Weather</button>
+      </div>
+  </div> <!--going to set the main body now-->
+  <div id="mainBodyRow" class="row h-fill px-5"> <!--start with one row (which is really our last main row 3)-->
+      <div id="mainBodyCol" class="col-12"> <!--nestle a column inside of that row to put all others inside-->
+          <div id="cityRow" class="row">
+              <div class="col">
+                  <div class="card text-center mt-3 border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
+                      <div class="card-header border border-dark">City</div>
+                      <div class="card-body border border-dark">
+                      <p id="cityBox" class="card-text"></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div id="tempRow" class="row">
+              <div class="col">
+                <div class="card text-center border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
+                      <div class="card-header border border-dark">Temperature</div>
+                      <div class="card-block">
+                          <div class="d-flex">
+                              <div class="col-4 border border-dark" id="kelvinBox"> 
+                              </div>
+                              <div class="col-4 border border-dark" id="fahrenheitBox"> 
+                              </div>
+                              <div class="col-4 border border-dark" id="celsiusBox"> 
+                              </div>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div id="conditionRow" class="row">
+              <div class="col">
+                  <div class="card text-center border border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
+                      <div class="card-header border border-dark">Condition</div>
+                      <div class="card-body border border-dark">
+                      <p class="card-text" id="conditionBox"></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div id="otherInfoRow" class="row">
+              <div class="col">
+                  <div class="card text-center border border-dark mb-3"> <!--style="width: 18rem;" this was in that-->
+                      <div class="card-header border border-dark">Other Info</div>
+                      <div class="card-body border border-dark">
+                      <div class="card-text">
+                            <img id="imageBox">
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!-- BootStrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9e24421ae4.js" crossorigin="anonymous"></script>
+    <!-- project JavaScript -->
+  </body>
+</html>
